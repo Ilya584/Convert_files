@@ -65,6 +65,7 @@ main{
     display: flex;
     justify-content: space-around;
     background-color: #152322;
+    /* padding: 200px; */
 }
 main p, h2, h1{
     color:whitesmoke;
@@ -111,8 +112,8 @@ width: 100px;
      margin-right: 5px;
     margin-top: 20px;
     background-color: #101516;
-    width: 200px;
-    height: 500px;
+    width: 210px;
+    height: 555px;
      transform: skewX(-20deg); 
      align-content: end;
 }
@@ -132,13 +133,28 @@ footer div{
 
 .wum{
     font-size: 4vw;
+    
 }
 .tit{
-   transform: rotate(-90deg);      /* поворот против часовой стрелки */
-  transform-origin: left top;     /* точка вращения — левый верхний угол */
+    text-align: center;
+    height: 0px;
+    line-height: 200px;
+   font-size: 2vw;
+   transform: rotate(-90deg);      
+  transform-origin: left top;     
   white-space: nowrap;        
 }
 .content{
     display: none;
+}
+
+.tasks{
+  list-style-type: none; /* Убирает маркеры */
+  padding-left: 0;        /* Убирает левый отступ списка */
+
+
+   display: flex;       /* Выстраивает все li в одну линию */
+  flex-wrap: nowrap;   /* Строго запрещает li переноситься на новую строку */
+  
 }
   
