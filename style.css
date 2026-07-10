@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+body{
+ font-family: "Comfortaa", sans-serif;
+font-optical-sizing: auto;
+font-weight: 400;
+margin: 0;
+padding: 0; 
+}
+a{
+    text-decoration: none;
+}
+
+
+img{
+    width: 100%;
+}
+
+header{
+    color: rgb(238, 238, 238);
+    height: 150px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    background-color: #214A46;
+}
+.logo{
+    margin-left: 100px;
+    width: 300px;
+}
+.nav_ico{
+    
+    width: 25px;
+    margin-left: 5px;
+}
+.nav_bar{
+    margin-left: auto;
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+   cursor: pointer;
+}
+
+.ent{
+    padding: 7px;
+    border: 5px solid;
+    border-color: #54E6D4;
+    border-radius: 20px;
+    margin-right: 100px;
+    cursor: pointer;
+
+}
+
+.reg{
+    color: #101516;
+    padding: 7px;
+    /* border: 5px solid; */
+    background-color: #54E6D4;
+    border-radius: 20px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+    background-color: #152322;
+}
+main p, h2, h1{
+    color:whitesmoke;
+}
+main h2{
+    font-size: 4vw;
+    margin-bottom: 10px;
+}
+.main_container{
+    
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.droper{
+    border: 5px solid;
+    padding: 200px 300px;
+    background-color: grey;
+    border-radius: 10%;
+    border-color: #007bff;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+}
+.droper_ico{
+width: 100px;
+}
+.convert{
+    display: none; 
+}
+.why_us_main{
+    display: flex;
+    
+}
+.task{
+    display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+    border: 5px solid;
+     border-color: #54E6D4;
+     margin-right: 5px;
+    margin-top: 20px;
+    background-color: #101516;
+    width: 200px;
+    height: 500px;
+     transform: skewX(-20deg); 
+     align-content: end;
+}
+.custom-upload { 
+    padding: 30px; 
+    background-color: #007bff; 
+    color: rgb(238, 238, 238); 
+    border-radius: 10px;
+    cursor: pointer;
+}
+footer div{
+    display: flex;
+    justify-content: space-around;
+   
+  flex-direction: column;
+}
+
+.wum{
+    font-size: 4vw;
+}
+.tit{
+   transform: rotate(-90deg);      /* поворот против часовой стрелки */
+  transform-origin: left top;     /* точка вращения — левый верхний угол */
+  white-space: nowrap;        
+}
+.content{
+    display: none;
+}
+  
