@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 
+* {
+    box-sizing: border-box;
+}
 body{
  font-family: "Comfortaa", sans-serif;
 font-optical-sizing: auto;
@@ -9,6 +12,7 @@ padding: 0;
 }
 a{
     text-decoration: none;
+    color: #e8e8e8;
 }
 
 ul{
@@ -73,11 +77,12 @@ main{
     /* padding: 200px; */
 }
 main p, h2, h1{
-    color:whitesmoke;
+    color:#e8e8e8;
 }
 main h2{
-    font-size: 4vw;
-    margin-bottom: 10px;
+    /* font-size: 4vw;
+    margin-bottom: 10px; */
+    font-size: clamp(24px, 4vw, 48px);
 }
 .main_container{
     
@@ -89,10 +94,16 @@ main h2{
 
 .droper{
     border: 5px solid;
-    padding: 150px 350px;
-    background-color: grey;
+    max-width: 800px;
+    padding: 80px 20px;
+    width: 100%;
+    /* padding: 150px 350px; */
+    /* background-color: grey;
     border-radius: 10%;
-    border-color: #007bff;
+    border-color: #007bff; */
+    border: 2px dashed #54E6D4;
+    background-color: #152322; 
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center ;
@@ -132,7 +143,7 @@ main h2{
 .custom-upload { 
     padding: 30px; 
     background-color: #007bff; 
-    color: rgb(238, 238, 238); 
+    color: #e8e8e8; 
     border-radius: 10px;
     cursor: pointer;
 }
@@ -144,14 +155,14 @@ footer div{
 }
 
 .wum{
-    font-size: 4vw;
+    font-size: clamp(24px, 4vw, 48px);
     
 }
 .tit{
     text-align: center;
     height: 0px;
     line-height: 200px;
-   font-size: 2vw;
+   font-size: clamp(24px, 2vw, 48px);
    transform: rotate(-90deg);      
   transform-origin: left top;     
   white-space: nowrap;
@@ -162,14 +173,14 @@ footer div{
 }
 
 .tasks{
-  
    display: flex;       
+    gap: 15px;
   flex-wrap: nowrap;   
   
 }
   
 footer{
-    font-size: 2vw;
+    font-size: clamp(24px, 2vw, 48px);
     display: flex;
     background-color: #101516;
     color: #e8e8e8;
@@ -192,7 +203,7 @@ footer{
   text-align: center;
    
     line-height: normal;
-    font-size: 3vw;
+    font-size: clamp(24px, 2vw, 48px);
    transform: rotate(0deg);      
 }
 
