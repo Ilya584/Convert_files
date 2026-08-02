@@ -70,6 +70,14 @@ header{
     cursor: pointer;
 }
 
+.reg:hover{
+    background-color: #214A46;
+    color: #54E6D4;
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 12px rgba(84, 230, 212, 0.3);
+    transition: all 0.3s ease;
+}
+
 main{
     display: flex;
     justify-content: space-around;
@@ -181,21 +189,214 @@ footer div{
   
 footer{
     font-size: clamp(24px, 2vw, 48px);
-    display: flex;
+    /* display: flex; */
     background-color: #101516;
     color: #e8e8e8;
     justify-content: space-around;
 }
 
+/* Основной контейнер футера */
+.site_footer {
+    background-color: #0b0f10;
+    color: #e8e8e8;
+    padding: 60px 40px 30px 40px;
+    font-size: 0.95rem;
+}
+
+/* Верхняя секция: Сетка бренд + навигация */
+.footer_left {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Блок бренда (слева) */
+.footer_brand {
+    max-width: 300px;
+}
+.footer_logo{
+    align-items: center;
+}
+.footer_logo img {
+    width: 180px;
+    margin-bottom: 15px;
+}
+
+.brand_desc {
+    color: #a0a0a0;
+    line-height: 1.5;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+/* Индикатор статуса серверов */
+.status_badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(84, 230, 212, 0.1);
+    color: #54E6D4;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(84, 230, 212, 0.2);
+}
+
+.status_dot {
+    width: 8px;
+    height: 8px;
+    background-color: #54E6D4;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #54E6D4; /* Эффект свечения */
+}
+
+/* Навигационные колонки
+.footer_nav {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+} */
+
+.footer_col h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Небольшая подчеркивающая линия под заголовками колонок */
+.footer_col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 30px;
+    height: 2px;
+    background-color: #54E6D4;
+}
+
+.footer_col ul {
+    width: 210px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer_col li {
+    margin-bottom: 12px;
+}
+
+.footer_col a {
+    color: #a0a0a0;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    display: inline-block;
+}
+
+/* Эффект наведения на ссылку в колонках */
+.footer_col a:hover {
+    color: #54E6D4;
+    padding-left: 5px; /* Легкий сдвиг вправо при наведении */
+}
+
+
+
+/* Нижняя секция */
+.footer_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #7a7a7a;
+    font-size: 0.85rem;
+}
+
+.footer_legal a {
+    color: #7a7a7a;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+}
+
+.footer_legal a:hover {
+    color: #e8e8e8;
+}
+
+/* Соцсети */
+.social_links {
+    display: flex;
+    gap: 12px;
+}
+
+.social_links ul {
+    display: flex;
+    
+}
+
+.social_links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #152322;
+    color: #54E6D4;
+    border-radius: 50%;
+    border: 1px solid #214A46;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.social_links a:hover {
+    background-color: #54E6D4;
+    color: #101516;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(84, 230, 212, 0.3);
+}
+/* .social_links a img {
+    transition: filter 0.3s ease;
+} */
+.social_links a svg {
+    width: 32px;  /* Задайте нужную ширину */
+    height: 32px;
+    fill: #54E6D4; 
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+.social_links ul li:last-child a svg{
+    width: 35px;  
+    height: 35px;
+}
+
+/* Ваши текущие стили для ссылки при наведении */
+.social_links a:hover {
+    background-color: #54E6D4;
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 12px rgba(84, 230, 212, 0.3);
+}
+
+/* При наведении на ссылку, иконка внутри неё плавно красится в тёмный */
+.social_links a:hover svg {
+    fill: #101516;
+}
+
+
+
 .task:hover{
      flex-direction: column;
      border-color: #e654d5;
-    
+    transition: all 0.3s ease;
     width: 700px;
    justify-content: flex-start;
    
-     transform: skewX(0deg); 
-     z-index: 2;
+     /* transform: skewX(0deg);  */
+    z-index: 2;
 }
 
 .task:hover .tit{
