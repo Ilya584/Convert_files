@@ -1,5 +1,7 @@
+import './ProgressBar';
 import './App.css';
 
+import ListOfFiles from './components/ListOfFiles';
 function App() {
   return (
     <>
@@ -7,6 +9,7 @@ function App() {
         <div className="logo">
           <img src="/src/assets/main_logo.png" alt="Лого" />
         </div>
+        {/* Переделать */}
         <div className="nav_bar">
           <p>Конвертировать</p>
           <div className="nav_ico">
@@ -15,6 +18,7 @@ function App() {
         </div>
         <div className="reg">Зарегистрироваться</div>
         <div className="ent">Войти</div>
+        {/* Переделать */}
       </header>
 
       <main>
@@ -27,6 +31,22 @@ function App() {
             </div>
             <label htmlFor="file-upload" className="custom-upload">Выберите файл</label>
             <input type="file" name="userfile" className="convert" id="file-upload" />
+          </div>
+          <div className="blok_of_compeleted_actions">
+            <div className="pick">
+            <ul className="action_choice">   
+            <li><button className="btn">В очереди</button></li>
+            <li><button className="btn">Завершено</button></li>
+            </ul>
+            </div>
+            <div className="list_blok">
+              <ListOfFiles/>
+            {/* <ul className="list_of_files">
+              <li>
+                <Field/>
+              </li> 
+            </ul> */}
+            </div>
           </div>
 
           <h1 className="wum">Почему мы?</h1>
