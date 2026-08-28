@@ -1,86 +1,25 @@
-import './ProgressBar';
+// import './components/ProgressBar';
 import './App.css';
-
-import ListOfFiles from './components/ListOfFiles';
+import Header from './components/Heder';
+import WUM from './components/WUM';
+import Droper from './components/Droper';
+import Blok_Of_Compeleted_Actions from './components/Blok_Of_Compeleted_Actions';
 function App() {
+
+  
   return (
     <>
-      <header>
-        <div className="logo">
-          <img src="/src/assets/main_logo.png" alt="Лого" />
-        </div>
-        {/* Переделать */}
-        <div className="nav_bar">
-          <p>Конвертировать</p>
-          <div className="nav_ico">
-            <img src="/src/assets/ct.svg" alt="Иконка" />
-          </div>
-        </div>
-        <div className="reg">Зарегистрироваться</div>
-        <div className="ent">Войти</div>
-        {/* Переделать */}
-      </header>
+      <Header></Header>
 
       <main>
         <div className="main_container">
-          <h2>Конвертер файлов</h2>
-          <p>Сконвертируйте ваши файлы в любой формат</p>
-          <div className="droper">
-            <div className="droper_ico">
-              <img src="/src/assets/file.svg" alt="Файл" />
-            </div>
-            <label htmlFor="file-upload" className="custom-upload">Выберите файл</label>
-            <input type="file" name="userfile" className="convert" id="file-upload" />
-          </div>
-          <div className="blok_of_compeleted_actions">
-            <div className="pick">
-            <ul className="action_choice">   
-            <li><button className="btn">В очереди</button></li>
-            <li><button className="btn">Завершено</button></li>
-            </ul>
-            </div>
-            <div className="list_blok">
-              <ListOfFiles/>
-            {/* <ul className="list_of_files">
-              <li>
-                <Field/>
-              </li> 
-            </ul> */}
-            </div>
-          </div>
-
-          <h1 className="wum">Почему мы?</h1>
-          <div className="why_us_main">
-            <ul className="tasks">
-              <li>
-                <div className="task">
-                  <h2 className="tit">Высокая скорость</h2>
-                  <p className="content">Мы используем мощные серверные кластеры, которые обрабатывают файлы параллельно. Конвертация занимает секунды, даже если вы загружаете тяжелые видео или большие архивы. Никаких очередей — только результат сразу после загрузки.</p>
-                </div>
-              </li>
-              <li>
-                <div className="task">
-                  <h2 className="tit">Конфиденциальность</h2>
-                  <p className="content">Все загруженные документы и медиафайлы автоматически стираются с наших серверов сразу после завершения конвертации. Мы не храним ваши данные, не передаем их третьим лицам и не используем для обучения алгоритмов. Ваша коммерческая тайна или личные фото останутся только у вас.</p>
-                </div>
-              </li>
-              <li>
-                <div className="task">
-                  <h2 className="tit">Разнообразие форматов</h2>
-                  <p className="content">От классических PDF, DOCX и MP4 до специфических RAW, WEBP, EPUB и CAD-форматов. Мы поддерживаем не только стандартные, но и редкие типы файлов, чтобы вам не пришлось искать другие сервисы для узких задач.</p>
-                </div>
-              </li>
-              <li>
-                <div className="task">
-                  <h2 className="tit">Без потери качества</h2>
-                  <p className="content">Наши алгоритмы сохраняют исходное разрешение, битрейт и цветовую гамму. Мы не пережимаем изображения в «мыло» и не занижаем качество звука. Конвертация проходит без транскодинга там, где это возможно (Direct Stream Copy).</p>
-                </div>
-              </li>
-            </ul>
-          </div>
+         <Droper></Droper>
+          
+        <WUM></WUM>
+         <Blok_Of_Compeleted_Actions/>
         </div>
       </main>
-
+      
       <footer className="site_footer">
         <div className="footer_left">
           <div className="footer_brand">

@@ -1,5 +1,4 @@
 
-import './App.css';
 
 export default function ProgressBar({ progress }) {
   return (
