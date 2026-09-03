@@ -188,11 +188,6 @@ main h2{
     border: 3px solid #0056b2;
 }
     
-#id_files{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
  .big_cont {
   display: flex;
@@ -265,6 +260,24 @@ main h2{
   width: 100%;
   height: auto;
   display: block;
+}
+
+.delete_all{
+    margin: 10px 0;
+    background-color:brown;
+    transform: skewX(0deg);
+    border-radius: 50px;
+    width: 100%;
+}
+
+.delite_task{
+    font-family: inherit;
+    flex: 0.5;
+    width: 60px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: brown;
+    color: #e8e8e8;
 }
 
 .why_us_main{

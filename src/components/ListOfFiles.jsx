@@ -2,7 +2,8 @@ import Field from './Field'
 
 const ListOfFiles = (props) =>{
 const{
-tasks = []
+tasks = [],
+onDeletTask,
 } = props;
 
 
@@ -18,7 +19,8 @@ tasks = []
               
               {tasks.map((task) =>(
                 <Field
-                id_files = {task.id_files}
+                key = {task.id}
+                id={task.id}  
                 className = {task.className}
                 name = {task.name}
                 file_extension = {task.file_extension}
@@ -27,6 +29,7 @@ tasks = []
                 ime_start = {task.time_start}
                 time_end = {task.time_end}
                 is_dan = {task.is_dan}
+                onDeletTask = {onDeletTask}
                 ></Field>
               ))}
               
