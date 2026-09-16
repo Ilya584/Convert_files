@@ -125,6 +125,15 @@ main h2{
     align-items: center ;
     box-shadow: 0 8px 24px rgba(84, 230, 212, 0.3);
 }
+
+.droper.drag-over {
+  border-color: #4CAF50;
+  background-color: #e8f5e9;
+  transform: scale(1.05);
+  animation: pulse 1s infinite alternate;
+}
+
+
 .droper_ico{
     width: 150px;
 }
@@ -172,11 +181,11 @@ main h2{
     height: 50px;
     margin: 10px;
     transform: skewX(-20deg);
-    background-color: #152322;
+    background-color: #214A46;
 }
 
-.action_choice li:last-child .btn{
-    background-color: #214a46;
+.btn_act{
+    background-color: #101516;
 }
 .content_blox{
     display: flex;
@@ -308,6 +317,7 @@ main h2{
     
    
     transform 1s;
+    
      
 }
 .custom-upload { 
@@ -339,7 +349,8 @@ footer div{
    transform: rotate(-90deg);      
   transform-origin: left top;     
   white-space: nowrap;
-  
+   /* transition: fill 0.5s ease, transform 0.5s ease;   */
+    
       
 }
 .content{
@@ -347,7 +358,7 @@ footer div{
    opacity: 0;
     visibility: hidden;
     max-height: 0;
-    /* transition: opacity 0.4s ease, visibility 0.4s ease, max-height 0.4s ease; */
+    transition: opacity 0.4s ease, visibility 0.4s ease, max-height 0.4s ease;
     color: #d1d1d1;
     font-size: 0.95rem;
     line-height: 1.6;
@@ -566,12 +577,13 @@ footer{
    
      transform: skewX(0deg); 
     z-index: 2;
+    
 }
 
 .task:hover .tit{
    
   text-align: center;
-   
+ 
     line-height: normal;
     font-size: clamp(18px, 1.5vw, 20px);
    transform: rotate(0deg);      

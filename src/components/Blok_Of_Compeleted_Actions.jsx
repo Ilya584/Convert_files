@@ -1,17 +1,27 @@
 import ListOfFiles from './ListOfFiles'
-
+import {useState} from 'react'
 const Blok_Of_Compeleted_Actions = () =>{
 
 const onDeleteAllButtonC1ick = () =>{
-alert("Все удалено")
+!comp ?setFiles([]):setComp_Files([]);
 }
 
 const onDeletTask = (id) =>{
-console.log(`Удалена задача № ${id}`)
+!comp ?setFiles(files.filter((file) => file.id !== id)):setComp_Files(files.filter((file) => file.id !== id));
+
 }
 
+const [comp, setComp] = useState(false); 
+const trigger = (e) =>{
+setComp(e);
 
-    let files = [
+} 
+    
+
+
+
+const [files, setFiles] = useState(
+  [
   {
     id: 101,
     className: "document",
@@ -32,7 +42,7 @@ console.log(`Удалена задача № ${id}`)
     content_img: "https://picsum.photos/200/245?random=2",
     time_start: "2026-08-27T11:15:00Z",
     time_end: "2026-08-27T11:20:00Z",
-    is_dan: true
+    is_dan: false
   },
   {
     id: 103,
@@ -54,7 +64,7 @@ console.log(`Удалена задача № ${id}`)
     content_img: "https://picsum.photos/200/245?random=4",
     time_start: "2026-08-25T14:30:00Z",
     time_end: "2026-08-25T15:00:00Z",
-    is_dan: true
+    is_dan: false
   },
   {
     id: 105,
@@ -67,19 +77,49 @@ console.log(`Удалена задача № ${id}`)
     time_end: "2026-08-24T16:05:00Z",
     is_dan: false
   }
-];
+]);
+
+const [comp_files, setComp_Files] = useState(
+  [
+  
+  {
+    id: 99,
+    className: "presentation",
+    name: "Презентация проекта",
+    file_extension: "pptx",
+    file_size: 3072000, // 3 МБ
+    content_img: "https://picsum.photos/200/245?random=4",
+    time_start: "2026-08-25T14:30:00Z",
+    time_end: "2026-08-25T15:00:00Z",
+    is_dan: true
+  },
+  {
+    id: 100,
+    className: "archive",
+    name: "Архив с исходниками",
+    file_extension: "zip",
+    file_size: 10240000, // 10 МБ
+    content_img: "https://picsum.photos/200/245?random=5",
+    time_start: "2026-08-24T16:00:00Z",
+    time_end: "2026-08-24T16:05:00Z",
+    is_dan: true
+  }
+]
+
+
+);
 
     return(
        <div className="blok_of_compeleted_actions">
             <div className="pick">
             <ul className="action_choice">   
-            <li><button className="btn">В очереди</button></li>
-            <li><button className="btn" >Завершено</button></li>
+            <li><button className= {`btn ${comp? '' : 'btn_act'}`} onClick={() =>trigger(false)}>В очереди</button></li>
+            <li><button className= {`btn ${comp? 'btn_act' : ''}`} onClick={() =>trigger(true)}>Завершено</button></li>
             </ul>
             <button className={`btn delete_all`} onClick={onDeleteAllButtonC1ick}>Удалить все</button>
             </div>
             <div className="list_blok">
-              <ListOfFiles tasks={files} onDeletTask ={onDeletTask}/>
+              <ListOfFiles tasks={comp? comp_files:files} onDeletTask ={onDeletTask}/>
             
             </div>
           </div>
