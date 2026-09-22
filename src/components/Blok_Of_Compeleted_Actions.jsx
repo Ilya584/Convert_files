@@ -7,11 +7,12 @@ const onDeleteAllButtonC1ick = () =>{
 }
 
 const onDeletTask = (id) =>{
-!comp ?setFiles(files.filter((file) => file.id !== id)):setComp_Files(files.filter((file) => file.id !== id));
+comp ?setComp_Files(comp_files.filter((file) => file.id !== id)):setFiles(files.filter((file) => file.id !== id));
 
 }
 
 const [comp, setComp] = useState(false); 
+
 const trigger = (e) =>{
 setComp(e);
 
@@ -85,7 +86,7 @@ const [comp_files, setComp_Files] = useState(
   {
     id: 99,
     className: "presentation",
-    name: "Презентация проекта",
+    name: "Тест 1",
     file_extension: "pptx",
     file_size: 3072000, // 3 МБ
     content_img: "https://picsum.photos/200/245?random=4",
@@ -96,7 +97,7 @@ const [comp_files, setComp_Files] = useState(
   {
     id: 100,
     className: "archive",
-    name: "Архив с исходниками",
+    name: "Тест 2",
     file_extension: "zip",
     file_size: 10240000, // 10 МБ
     content_img: "https://picsum.photos/200/245?random=5",

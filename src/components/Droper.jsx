@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-   
+import CooseFormatBlock from './ChooseFormatBlock'
 function Droper() {
   const [isDragging, setIsDragging] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
@@ -52,6 +52,8 @@ function Droper() {
       <h2>Конвертер файлов</h2>
       <p>Сконвертируйте ваши файлы в любой формат</p>
       
+      <CooseFormatBlock></CooseFormatBlock>
+
       <div 
         className={`droper ${isDragging ? 'drag-over' : ''}`}
         onDragOver={handleDragOver}
