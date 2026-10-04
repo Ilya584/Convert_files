@@ -23,6 +23,9 @@ ul{
 img{
     max-width: 100%;
 }
+button{
+    font-family: inherit;
+}
 
 header{
     color: rgb(238, 238, 238);
@@ -116,7 +119,8 @@ main h2{
     max-width: 800px;
     padding: 80px 20px;
     width: 100%;
-    
+    transition: border-color 0.3s ease;
+    transition: box-shadow 0.3s ease;
     border: 2px dashed #54E6D4;
     background-color: #152322; 
     border-radius: 20px;
@@ -127,10 +131,7 @@ main h2{
 }
 
 .droper.drag-over {
-  border-color: #4CAF50;
-  background-color: #e8f5e9;
-  transform: scale(1.05);
-  animation: pulse 1s infinite alternate;
+  background-color: #0b0f10;
 }
 
 
@@ -259,6 +260,7 @@ main h2{
 
 .content_img {
   width: 80px;
+  height: 100px;
   margin: 5px;
   padding: 2px;
   background-color: #214A46;
@@ -315,10 +317,8 @@ main h2{
      transition:
     width 1s,
     
-   
     transform 1s;
     
-     
 }
 .custom-upload { 
     padding: 30px; 
@@ -508,7 +508,7 @@ footer{
     color: #e8e8e8;
 }
 
-/* Соцсети */
+
 .social_links {
     display: flex;
     gap: 12px;
@@ -606,7 +606,7 @@ footer{
 .choose_format{
    border: 5px solid;
     max-width: 800px;
-    padding: 80px 20px;
+    padding: 80px 20px 50px;
     width: 100%;
     
     border: 2px solid #54E6D4;
@@ -620,9 +620,10 @@ footer{
 }
 
 .head_cf{
+    margin-top: -50px;
     display: flex;
-    gap: 100px;
-     
+    gap: 50px;
+    padding: 0 100px;
     
 }
 .body_cf{
@@ -650,4 +651,41 @@ footer{
     width: 100%;          
   margin: 10px auto;      
   border: 1px solid #e8e8e8; 
+}
+
+
+#more_formats{
+display: flex;
+align-items: center;
+justify-content: center;
+width: 600px;
+height: 50px;
+font-size: 20px;
+color: #e8e8e8;
+background-color: #0b0f10;
+margin: 10px 0;
+gap: 150px;
+border-radius: 50px;
+
+}
+
+
+
+.content_up h1{
+    width: 500px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+           
+  margin: 10px;   
+  color: #e8e8e8;
+}
+
+.content_up h1 > * {
+  flex: 1;
+  text-align: center;   
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

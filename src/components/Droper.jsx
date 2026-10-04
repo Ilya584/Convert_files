@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import CooseFormatBlock from './ChooseFormatBlock'
 function Droper() {
   const [isDragging, setIsDragging] = useState(false);
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFile, setSelectedFiles] = useState([]);
 
   // Перехват файлов при перетаскивании
   const handleDragOver = (e) => {
@@ -20,7 +20,7 @@ function Droper() {
   const handleDragLeave = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    // Проверка: мы действительно вышли из droper, а не просто зашли на иконку или текст
+    // Проверка на выход из droper
     if (!e.currentTarget.contains(e.relatedTarget)) {
       setIsDragging(false);
     }
@@ -33,27 +33,29 @@ function Droper() {
 
     const files = e.dataTransfer.files;
     if (files && files.length > 0) {
-      setSelectedFile(files[0]);
-     
+      const filesArray = Array.from(files);
+      setSelectedFiles(filesArray);
+      console.log('Файлы были сброшены через Drag And Drop', filesArray);
+
     }
   };
 
-  // Перехват файла при выборе через стандартную кнопку/клик
+  // Перехват файла при выборе через кнопку
   const handleFileSelect = (e) => {
     const files = e.target.files;
     if (files && files.length > 0) {
-      setSelectedFile(files[0]);
-      console.log('Файл выбран через обзор:', files[0]);
+      const filesArray = Array.from(files);
+      setSelectedFiles(filesArray);
+      console.log('Файлы выбраны через обзор:', filesArray);
     }
   };
 
   return (
     <>
-      <h2>Конвертер файлов</h2>
-      <p>Сконвертируйте ваши файлы в любой формат</p>
-      
-      <CooseFormatBlock></CooseFormatBlock>
-
+     
+      {selectedFile.length > 0?(
+      <CooseFormatBlock files={selectedFile}></CooseFormatBlock>
+      ):(
       <div 
         className={`droper ${isDragging ? 'drag-over' : ''}`}
         onDragOver={handleDragOver}
@@ -75,8 +77,10 @@ function Droper() {
           className="convert" 
           id="file-upload" 
           onChange={handleFileSelect}
+           multiple
         />
       </div>
+      )}
     </>
   );
 

@@ -1,5 +1,26 @@
 
-const ChooseFormatBlock = (props) => {
+
+import { useState } from "react";
+import Droper from "./Droper";
+const ChooseFormatBlock = ({files}) => {
+const[currentFileIndex, setCurrentFileIndex] = useState(0);
+
+if (!files || !Array.isArray(files) || files.length === 0) {
+    return <div>Файлы не загружены или произошла ошибка</div>;
+  }
+
+const currentFile = files[currentFileIndex];
+
+const formatFileSize = (bytes) => {
+    if (bytes === 0) return '0 BT';
+    const k = 1024;
+    const sizes = ['B', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+  };
+
+
+
     const text_format = [
   { ext: '.txt', type: 'text' },
   { ext: '.log', type: 'text' },
@@ -46,10 +67,29 @@ const ChooseFormatBlock = (props) => {
   { ext: '.azw3', type: 'ebook' }
   ];
 
-  
+  const nextFile = () => {
+    if (currentFileIndex < files.length-1){
+    setCurrentFileIndex(prev => prev + 1);
+    
+    }
+    else if(currentFileIndex == files.length-1){
+    console.log("Функция сработала");
+    return (<Droper></Droper>)
+     }
+     
+    
+  };
 
+
+  
+  
+     
+    
+   
+ 
 
   return(
+    
     <div className="choose_format">
      
         <div className="head_cf">
@@ -58,14 +98,15 @@ const ChooseFormatBlock = (props) => {
           </div>
           <div className="content_block">
             <div className="content_up">
-              <h1>Название.формат</h1>
+              <h1>{currentFile?.name}</h1>
             </div>
             <div className="content_down">
-              <h3>Размер файла и прочее</h3>
+              <h3>{formatFileSize(currentFile?.size)}</h3>
             </div>
           </div> 
           <div className="count">
-            <h3>1/x</h3>
+            <h3>{currentFileIndex + 1}/{files.length}</h3>
+            {console.log(files)}
           </div>
           </div>
           <hr id = "horizontal_line"></hr>
@@ -73,11 +114,11 @@ const ChooseFormatBlock = (props) => {
         <div className="body_cf">
           
       {text_format.slice(0, 8).map((item, index) => (
-        <div className="format_exemple" key={index}>{item.ext || "Пусто"}</div>
+        <button className="format_exemple" key={index} onClick={nextFile}>{item.ext || "Null"}</button>
       ))}
         </div>
         <div className="futer_cf">
-          <button className="more">Другие форматы</button>
+          <button id="more_formats"><img src="/src/assets/V-shaped_arrow.svg" alt="Стрелка вниз" />Другие форматы<img src="/src/assets/V-shaped_arrow.svg" alt="Стрелка вниз" /></button>
         </div>
     </div>
 
