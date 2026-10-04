@@ -50,11 +50,17 @@ function Droper() {
     }
   };
 
+  const handleFinish = () => {
+    setSelectedFiles([]);
+  };
+
   return (
     <>
      
       {selectedFile.length > 0?(
-      <CooseFormatBlock files={selectedFile}></CooseFormatBlock>
+      <CooseFormatBlock 
+      files={selectedFile}
+      onFinish = {handleFinish}></CooseFormatBlock>
       ):(
       <div 
         className={`droper ${isDragging ? 'drag-over' : ''}`}

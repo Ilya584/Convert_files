@@ -1,10 +1,12 @@
 
 
 import { useState } from "react";
-import Droper from "./Droper";
-const ChooseFormatBlock = ({files}) => {
-const[currentFileIndex, setCurrentFileIndex] = useState(0);
+import { useContext } from 'react';
+import { ActionContext } from './MainBlock';
 
+const ChooseFormatBlock = ({files, onFinish}) => {
+const[currentFileIndex, setCurrentFileIndex] = useState(0);
+ const handleAddSingleItem = useContext(ActionContext);
 if (!files || !Array.isArray(files) || files.length === 0) {
     return <div>Файлы не загружены или произошла ошибка</div>;
   }
@@ -67,15 +69,17 @@ const formatFileSize = (bytes) => {
   { ext: '.azw3', type: 'ebook' }
   ];
 
-  const nextFile = () => {
+  const nextFile = (e) => {
     if (currentFileIndex < files.length-1){
+      console.log(e.target.textContent);
+    handleAddSingleItem(currentFile, e.target.textContent);
     setCurrentFileIndex(prev => prev + 1);
     
     }
-    else if(currentFileIndex == files.length-1){
-    console.log("Функция сработала");
-    return (<Droper></Droper>)
-     }
+    else{
+    
+    onFinish?.();
+    }
      
     
   };
