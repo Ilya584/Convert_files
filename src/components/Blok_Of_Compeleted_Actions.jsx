@@ -1,15 +1,25 @@
 import ListOfFiles from './ListOfFiles'
+import { FilesContext } from './context/FilesContext'
+import { useContext } from 'react'
 import {useState} from 'react'
 
-const Blok_Of_Compeleted_Actions = ({ArrayFiles}) =>{
+// const Blok_Of_Compeleted_Actions = ({ ArrayFiles }) =>{
+  const Blok_Of_Compeleted_Actions = () =>{
+
+    const{
+      files,
+      file_format
+    } = useContext(FilesContext);
+
+
 
 const onDeleteAllButtonC1ick = () =>{
 !comp ?setFiles([]):setComp_Files([]);
 }
 
 const onDeletTask = (id) =>{
-comp ?setComp_Files(comp_files.filter((file) => file.id !== id)):setFiles(files.filter((file) => file.id !== id));
-
+// comp ?setComp_Files(comp_files.filter((file) => file.id !== id)):setFiles(files.filter((file) => file.id !== id));
+console.log(files);
 }
 
 const [comp, setComp] = useState(false); 
@@ -121,7 +131,7 @@ const [comp_files, setComp_Files] = useState(
             <button className={`btn delete_all`} onClick={onDeleteAllButtonC1ick}>Удалить все</button>
             </div>
             <div className="list_blok">
-              <ListOfFiles tasks={comp? comp_files:ArrayFiles} onDeletTask ={onDeletTask}/>
+              <ListOfFiles tasks={comp? comp_files:files} onDeletTask ={onDeletTask}/>
             
             </div>
           </div>

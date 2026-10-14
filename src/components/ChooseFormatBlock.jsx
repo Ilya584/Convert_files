@@ -1,22 +1,22 @@
-
-
 import { useState } from "react";
 import { useContext } from 'react';
-import { ActionContext } from './MainBlock';
+import {FilesContext} from './context/FilesContext';
 
 const ChooseFormatBlock = ({files, onFinish}) => {
 const[currentFileIndex, setCurrentFileIndex] = useState(0);
- const handleAddSingleItem = useContext(ActionContext);
+ const {handleAddSingleItem} = useContext(FilesContext);
 if (!files || !Array.isArray(files) || files.length === 0) {
     return <div>Файлы не загружены или произошла ошибка</div>;
   }
 
 const currentFile = files[currentFileIndex];
 
+
+
 const formatFileSize = (bytes) => {
     if (bytes === 0) return '0 BT';
     const k = 1024;
-    const sizes = ['B', 'KB', 'MB', 'GB'];
+    const sizes = ['BT', 'KB', 'MB', 'GB'];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   };
@@ -70,27 +70,25 @@ const formatFileSize = (bytes) => {
   ];
 
   const nextFile = (e) => {
+
+     console.log(currentFile);
+
     if (currentFileIndex < files.length-1){
-      console.log(e.target.textContent);
-    handleAddSingleItem(currentFile, e.target.textContent);
     setCurrentFileIndex(prev => prev + 1);
-    
     }
     else{
     
     onFinish?.();
     }
-     
+
+    
+    console.log(e.target.textContent);
+    handleAddSingleItem(currentFile, e.target.textContent, formatFileSize(currentFile?.size));
     
   };
 
 
   
-  
-     
-    
-   
- 
 
   return(
     
@@ -102,7 +100,7 @@ const formatFileSize = (bytes) => {
           </div>
           <div className="content_block">
             <div className="content_up">
-              <h1>{currentFile?.name}</h1>
+              <h1><span>{currentFile?.name}</span></h1>
             </div>
             <div className="content_down">
               <h3>{formatFileSize(currentFile?.size)}</h3>
@@ -110,7 +108,7 @@ const formatFileSize = (bytes) => {
           </div> 
           <div className="count">
             <h3>{currentFileIndex + 1}/{files.length}</h3>
-            {console.log(files)}
+            {/* {console.log(files)} */}
           </div>
           </div>
           <hr id = "horizontal_line"></hr>

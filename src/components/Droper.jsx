@@ -16,6 +16,13 @@ function Droper() {
     e.stopPropagation();
     setIsDragging(true);
   };
+  
+
+  const fileSetFile = ()=>{ //Отметка времени когда пользователь сбросил файл
+    const exactTime = new Date();
+    console.log(exactTime.toLocaleString('ru-RU'));
+    return exactTime.toLocaleString('ru-RU');
+  }
 
   const handleDragLeave = (e) => {
     e.preventDefault();
@@ -24,6 +31,7 @@ function Droper() {
     if (!e.currentTarget.contains(e.relatedTarget)) {
       setIsDragging(false);
     }
+    
   };
 
   const handleDrop = (e) => {
@@ -36,7 +44,7 @@ function Droper() {
       const filesArray = Array.from(files);
       setSelectedFiles(filesArray);
       console.log('Файлы были сброшены через Drag And Drop', filesArray);
-
+      fileSetFile();
     }
   };
 
@@ -47,6 +55,7 @@ function Droper() {
       const filesArray = Array.from(files);
       setSelectedFiles(filesArray);
       console.log('Файлы выбраны через обзор:', filesArray);
+      fileSetFile();
     }
   };
 

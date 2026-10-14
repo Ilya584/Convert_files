@@ -223,6 +223,11 @@ main h2{
   text-overflow: ellipsis;
 }
 
+.field-name {
+   display: inline-block; /* Делает элемент доступным для задания размеров */
+   width: 200px; 
+}
+
 
 .litl_cont .loading_bar {
   flex: 3;            
