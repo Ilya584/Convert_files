@@ -1,4 +1,6 @@
+import { useContext } from 'react'
 import './ProgressBar';
+import { FilesContext } from './context/FilesContext'
 const Field = (props) => {
   const{
     className = '',
@@ -10,8 +12,12 @@ const Field = (props) => {
     time_start = '00:00:00',
     time_end = '00:00:00',
     is_dan,
-    onDeletTask
+    // onDeletTask
   } = props
+  const{
+    onDeletTask
+  } = useContext(FilesContext);
+  
 
     return(
 

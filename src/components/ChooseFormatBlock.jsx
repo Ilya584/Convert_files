@@ -71,7 +71,7 @@ const formatFileSize = (bytes) => {
 
   const nextFile = (e) => {
 
-     console.log(currentFile);
+     console.log(currentFile.name);
 
     if (currentFileIndex < files.length-1){
     setCurrentFileIndex(prev => prev + 1);
@@ -83,7 +83,7 @@ const formatFileSize = (bytes) => {
 
     
     console.log(e.target.textContent);
-    handleAddSingleItem(currentFile, e.target.textContent, formatFileSize(currentFile?.size));
+    handleAddSingleItem(currentFile.name, e.target.textContent, formatFileSize(currentFile?.size));
     
   };
 

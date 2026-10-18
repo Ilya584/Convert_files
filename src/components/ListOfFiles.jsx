@@ -3,7 +3,6 @@ import Field from './Field'
 const ListOfFiles = (props) =>{
 const{
 tasks = [],
-onDeletTask,
 } = props;
 
 
@@ -22,15 +21,13 @@ onDeletTask,
                 key = {task.id}
                 id={task.id}  
                 className = {task.className}
-                name = {task.file.name}
+                name = {task.fileName}
                 file_extension = {task.file_format}
                 file_size = {task.file_size}
                 content_img = {task.content_img}
                 ime_start = {task.time_start}
                 time_end = {task.time_end}
                 is_dan = {task.is_dan}
-                onDeletTask = {onDeletTask}
-                
                 ></Field>
               ))}
              
