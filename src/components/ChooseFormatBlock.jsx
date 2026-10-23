@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useContext } from 'react';
 import {FilesContext} from './context/FilesContext';
-
+import './style/ForChooseFormatBlock.css'
 const ChooseFormatBlock = ({files, onFinish}) => {
 const[currentFileIndex, setCurrentFileIndex] = useState(0);
  const {handleAddSingleItem} = useContext(FilesContext);

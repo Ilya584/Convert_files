@@ -1,4 +1,4 @@
-
+import './style/ForProgressBar.css'
 
 export default function ProgressBar({ progress }) {
   return (

@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
-import CooseFormatBlock from './ChooseFormatBlock'
+import CooseFormatBlock from './ChooseFormatBlock';
+import './style/ForDroper.css';
 function Droper() {
   const [isDragging, setIsDragging] = useState(false);
   const [selectedFile, setSelectedFiles] = useState([]);

@@ -1,0 +1,82 @@
+.big_cont {
+  display: flex;
+  flex-direction: column;
+  flex: 1; 
+}
+
+
+.litl_cont {
+  display: flex;
+  align-items: center;
+  gap: 15px;          
+  margin: 10px;   
+  color: #e8e8e8;
+}
+
+
+.litl_cont > * {
+  flex: 1;
+  text-align: center;   
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.field-name {
+   display: inline-block; /* Делает элемент доступным для задания размеров */
+   width: 200px; 
+}
+
+
+.litl_cont .loading_bar {
+  flex: 3;            
+  margin: 0;
+}
+
+.loading_bar {
+  width: 100%;
+  height: 15px;
+  background-color: #152322;
+  border-radius: 20px;
+  overflow: hidden;
+  
+}
+.field-extension { 
+    flex: 0.5;
+  width: 60px;        
+  height: 50px;
+  border-radius: 10px;
+  background-color: #0056b2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+.content_img {
+  width: 80px;
+  height: 100px;
+  margin: 5px;
+  padding: 2px;
+  background-color: #214A46;
+  flex-shrink: 0;    
+}
+
+.content_img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+.delite_task{
+    font-family: inherit;
+    flex: 0.5;
+    width: 60px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: brown;
+    color: #e8e8e8;
+}

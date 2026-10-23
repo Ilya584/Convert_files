@@ -1,3 +1,4 @@
+import './style/ForFooter.css'
 const Footer = () =>{
 return(
     <footer className="site_footer">

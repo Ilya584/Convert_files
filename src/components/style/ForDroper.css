@@ -1,0 +1,47 @@
+.droper{
+    border: 5px solid;
+    max-width: 800px;
+    padding: 80px 20px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+    transition: box-shadow 0.3s ease;
+    border: 2px dashed #54E6D4;
+    background-color: #152322; 
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    box-shadow: 0 8px 24px rgba(84, 230, 212, 0.3);
+}
+
+.droper.drag-over {
+  background-color: #0b0f10;
+}
+
+
+.droper_ico{
+    width: 150px;
+}
+.droper_ico img{
+    width: 100%;
+   
+
+}
+.droper:hover{
+    border-color: #e654d5;
+    box-shadow: 0 10px 30px rgba(230, 84, 213, 0.25);
+}
+.convert{
+    display: none; 
+}
+
+.custom-upload { 
+    padding: 30px; 
+    background-color: #007bff; 
+    color: #e8e8e8; 
+    border-radius: 10px;
+    cursor: pointer;
+}
+.custom-upload:hover{
+    background-color: #0056b2;
+}

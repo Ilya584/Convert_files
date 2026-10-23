@@ -1,0 +1,21 @@
+main{
+    display: flex;
+    justify-content: space-around;
+    background-color: #152322;
+    /* padding: 200px; */
+}
+main p, h2, h1{
+    color:#e8e8e8;
+}
+main h2{
+    /* font-size: 4vw;
+    margin-bottom: 10px; */
+    font-size: clamp(24px, 4vw, 48px);
+}
+.main_container{
+    width: 1400px;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}

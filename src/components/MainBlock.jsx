@@ -4,7 +4,7 @@ import Blok_Of_Compeleted_Actions from './Blok_Of_Compeleted_Actions';
 import {FilesContext} from './context/FilesContext';
 import { useState,useEffect } from 'react';
 // import { createContext, useContext } from 'react';
-
+import './style/ForMainBlock.css';
 const MainBlock = () => {
   const [files, setFiles] = useState(() =>{
     const savedFiles = localStorage.getItem('files');

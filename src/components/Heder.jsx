@@ -1,6 +1,7 @@
 import logo from '/src/assets/main_logo.png';
 import icon from '/src/assets/ct.svg';
 
+import './style/ForHeader.css';
 const Header = () => {
   const isLoggedIn = false; // Заглушка
 

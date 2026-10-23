@@ -1,3 +1,4 @@
+import './style/ForWUM.css'
 const WUM = () =>{
     
 

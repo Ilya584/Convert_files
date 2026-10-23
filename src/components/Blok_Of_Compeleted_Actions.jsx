@@ -2,7 +2,7 @@ import ListOfFiles from './ListOfFiles'
 import { FilesContext } from './context/FilesContext'
 import { useContext } from 'react'
 import {useState} from 'react'
-
+import './style/ForBlock_Of_Compeleted_Actions.css'
 // const Blok_Of_Compeleted_Actions = ({ ArrayFiles }) =>{
   const Blok_Of_Compeleted_Actions = () =>{
 

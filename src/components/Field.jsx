@@ -1,6 +1,7 @@
 import { useContext } from 'react'
-import './ProgressBar';
 import { FilesContext } from './context/FilesContext'
+import './ProgressBar';
+import './style/ForField.css'
 const Field = (props) => {
   const{
     className = '',
