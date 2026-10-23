@@ -28,6 +28,7 @@ const Header = () => {
           <div className="ent">Личный кабинет</div>
         </>
       )}
+      
     </header>
   );
 };
